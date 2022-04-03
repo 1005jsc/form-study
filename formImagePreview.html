@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<span>1. input file을 만듬 </span>
+<br>
+<br>
+<br>
+<br>
+<span>기본: type="file" name="file" accept="image/*" multiple onChange={callback} </span>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+input type="file" name="file" accept="image/*" multiple onChange={handleChange}/>
+<br>
+<br>
+<br>
+<span>2. input file을 만듬 </span>
+<br>
+<br>
+<br>
+
+<span>2. handleChange를 만들어준다 event(e)를 넣어준다</span>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<span>3. input에서 받아온 파일을 e.target.files에서 받아올 수 있다 </span>
+<br>
+<br>
+<br>
+<span> 받아 올 파일이 한개일 경우 e.target.files[0]해주고, 여러개이면 for loop돌린다  </span>
+<br>
+<br>
+<br>
+<br>
+<span>4. 이제 e.target.files에서 받아온 파일로 </span>
+
+
+
+<span>걍 이 이후로 부터는 설명 생략함
+  시간도 오래걸리고 
+</span>
+
+
+1. input file을 만듬 
+2. e.target.files[0] 로 files를 받아옴 
+3. 받아온 files로 setState를 만듬 [image, setImage] 
+4. useEffect(() => {}, [image])
+로 image값이 변할때마다 () => {}가 젹용될수 있게 만듬
+5.  image에서 image를 represent 하는 string을 뽑아 와야됨 
+그걸 도와주는 javascript api가 fileReader이다 
+fileReader에서 dataURL을 뺴올 것이다 
+const reader = new FileReader()
+reader.readAsDataURL(image)
+reader.onload=() => {
+  setImageUrl(reader.result as string)
+}
+하고 imageurl을 img테그에 넣어주면 됩니다 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

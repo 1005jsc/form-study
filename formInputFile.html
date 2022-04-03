@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form input file</title>
+</head>
+<body>
+
+
+<span>inpu file 다루는법 </span>
+<br>
+<br>
+<span>여기 가장 기본적인 형식의 form이 있다 </span>
+<br>
+
+form action="">
+<br>
+input type="file" name="image" accept="image/*">
+<br>
+
+/form> 
+<br>
+
+
+<form action="">
+  <input class="file_input"type="file" name="image" accept="image/*" >
+  
+</form> 
+
+<script>
+  
+  const readingFile = (e) => {
+    
+    let file = e.target.files[0]; //선택된 파일
+    const reader = new FileReader();
+    console.log(reader)
+    
+    file &&  reader.readAsDataURL(file); //파일을 읽는 메서드 
+    
+    
+    reader.onload = () => {
+    
+    
+      console.log(reader)
+      console.log(reader.result)
+    
+      const photoFrame = document.createElement("div");
+      photoFrame.style = `background : url(${reader.result}); background-size : cover`;
+      photoFrame.className = "photoFrame";
+      document.getElementById("pictures").appendChild(photoFrame);
+      e.target.value = "";
+    
+    }
+    
+  }
+  
+  const fileInput = document.querySelector('.file_input')
+  const pictureDiv = document.querySelector('.picture')
+  fileInput.addEventListener('change', (e) => {
+    e.preventDefault()
+    fileInput && readingFile(e)
+    })
+
+    // 이거 잘 안된다 
+
+  </script>
+
+  <br>
+  <span>input 테그에 타입은 파일, 네임은 파일종류를 기본적으로 적고, </span>
+  <br>
+  <span>그 다음, onChange를 등록해 file을   e.target.files[0]  으로 받아온다 onClick으로 하게되면 파일선택이 아직 안된 상태였을때도 진행되어져 버리기때문이다   </span>
+  <br>
+  <span>여기서 file이 태그에 잘 들어왔나 확인해 보고싶어서 console.log(e.target)해보면, 아쉽게도 테그만 보여질뿐 파일이 잘 들어왔는지는  확인 할 수가 없다 </span>
+  <br>
+  <span>e.target.files[0]이라고 해야 불러내온 파일을 확인 할 수가 있다 </span>
+
+  form action="">
+  <br>
+  input type="file" name="image" onClick={onClick} accept="image/*">
+  <br>
+  /form> 
+  <br>
+
+
+
+
+</body>
+</html>

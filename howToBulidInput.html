@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How To Build Input</title>
+</head>
+<body>
+  <br/>
+  <br/>
+  <br/>
+  <h1>How to Build Input by Steps</h1>
+  <br/>
+  <br/>
+  <br/>
+  <h1>Sample</h1>
+  <br/>
+  <br/>
+  form className={styles.card_form} action="">
+  div className={styles.form_container}>
+  input ref={inputNameRef}className={styles.input} type="text" name="name"onChange={handleChange} defaultValue={name} />
+  input ref={inputCompanyRef}className={styles.input} type="text" name="company"onChange={handleChange} defaultValue={company} />
+  select ref={inputThemeRef}className={styles.select} name="theme" id="theme"onChange={handleChange} defaultValue={theme}>
+  option value="dark">dark /option>
+  option value="light">light /option>
+  /select>
+  input ref={inputDutyRef}className={styles.input}  type="text" name="duty" onChange={handleChange}defaultValue={duty} />
+  input ref={inputEmailRef}className={styles.input} type="text"  name="email"onChange={handleChange} defaultValue={email} />
+  textarea ref={inputMessageRef}className={styles.textarea} name="message" onChange={handleChange} defaultValue={message}> /textarea>
+  /div>
+  div className={styles.button_container}>
+  FileInput fileName={card.fileName} onFileChange={onFileChange}/>
+  
+  DeleteButton
+  onDelete={onDelete}
+  cardId={card.id}
+  />
+  
+  /div>
+  
+  /form>
+  
+  
+  <br/>
+  <br/>
+  <span> step 0 </span>
+  <br/>
+  <br/>
+  <span> 어떤 데이터를 받아와야하는지 잘 머릿속에 정리한다  </span>
+  
+  <br/>
+  <br/>
+
+
+  <span> step 1 </span>
+  <br/>
+  <span> form 테그를 만든다  </span>
+  <br/>
+  <br/>
+  <br/>
+  form action="">
+  <br/>
+  /form>
+  
+  
+  <br/>
+  <span> step 2 </span>
+  <br/>
+  <span> 필요한 input들을 form테그안에 순서에 맞춰 갯수에 맞춰 넣는다, select, textarea도 넣는다    </span>
+  <br/>
+  <br/>
+  <span> 이번의 경우는 6개  </span>
+  <br/>
+
+  form action="">
+    input type="text" />
+    input type="text" />
+    select name="" id="">
+      option value=""> /option>
+      option value=""> /option>
+    /select>
+    input type="text" />
+    input type="text" />
+    textarea name="" id="" cols="30" rows="10"> /textarea>
+  
+    /form>
+<br/>
+<br/>
+<br/>
+
+  <span> step 3</span>
+  <br/>
+  
+  <span> 각 input테그에 맞는 타입(type="")과 변수이름(name=""), defaultValue, placeholder를 설정해준다 </span>
+  <br/>
+  <br/>
+  <span>예 : input type="text" /> ->  input type="text" name="student's name" defaultValue={student's name}></span>
+  <br/>
+  <span>이런식으로 </span>
+  <br/>
+  <br/>
+  <br/>
+  form action="">
+    input type="text" name="name" defaultValue={''} placeholder='name'/>
+    input type="text" name="company" defaultValue={''} placeholder='company'/>
+    select name="theme" id="theme" defaultValue={'light'} placeholder='light'>
+      option value="dark">dark /option>
+      option value="light">light /option>
+    /select>
+    input type="text" name="duty" defaultValue={''} placeholder='duty'/>
+    input type="text" name="email" defaultValue={''} placeholder='email'/>
+    textarea name="message" defaultValue={''} placeholder='tell us about yourself'>
+      
+    /textarea>
+  
+    /form>
+  
+  
+  <br/>
+  <br/>
+  <br/>
+
+  <span> step 4 </span>
+  <br/>
+  <br/>
+  <span> 각각에 classname, ref, onClick을 넣어준다 </span>
+  <br/>
+  <br/>
+  <span> 여기서 classname은 input은 input으로 통일, select는 select로 통일, textarea는 textarea로 통일 하는게 좋다 그래야 나중에 스타일 하기 편하다  </span>
+  <br/>
+  <br/>
+  form action="">
+    input ref={nameRef}className={styles.input} type="text" name="name" onClick={handleClick}defaultValue={'name'}/>
+    input ref={companyRef}className={styles.input} type="text" name="company" onClick={handleClick}defaultValue={'name'}/>
+    select ref={themeRef}className={styles.select} name="theme" id="theme" onClick={handleClick}defaultValue={'name'}>
+      option value="dark">dark /option>
+      option value="light">light /option>
+    /select>
+    input ref={dutyRef}className={styles.input} type="text" name="duty" onClick={handleClick}defaultValue={'name'}/>
+    input ref={emailRef}className={styles.input} type="text" name="email" onClick={handleClick}defaultValue={'name'}/>
+    textarea ref={messageRef}className={styles.textarea} name="message" onClick={handleClick}defaultValue={'name'}>
+  
+    /textarea>
+  
+  /form>
+  <br/>
+  <br/>
+  <br/>
+  <span>step 5 (마지막)</span>
+  <br/>
+  <br/>
+  <span>form 에 onSubmit={handleSubmit} 을 달고 input type="submit" />도 하나 만들어준다 </span>
+  <br/>
+  <br/>
+  <span> 끝</span>
+  
+
+
+  <br/>
+  <br/>
+  <br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

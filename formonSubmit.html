@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>onSubmit and button</title>
+</head>
+<body>
+  <span>form 태그 안의 onSubmit 과 onChange, onClick을 어떻게 자유자재로 다룰것인가 </span>
+  <br>
+  <span>1. 아래에는 기본적으로 form을 다루는 방식을 보여줬다 </span>
+  <br>
+  <span>default로 이런식으로 onSubmit 을 등록한다 </span>
+    <br>
+  <form action="" onSubmit={hadleSubmit}>
+    <label for="name">name
+      <input type="text" >
+    </label>
+    <select name="color" id="color">
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+    </select>
+    <button>button</button>
+    <input type="button" value="submit">
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <span>1. onSubmit은 form테그에 넣어준다 </span>
+  <br>
+  <span>그리고 button두개 (하나는 button 테그 그대로, 또 하나는 input의 type이 button인 경우)</span>
+  <br>
+  <span>를 만들어줬다</span>
+  <br>
+  <br>
+  <span>button에 preventDefault를 달았을 경우, 안달았을 경우의 구분 </span>
+  <br>
+  <br>
+  <span>preventdefault를 안 달았을 경우: </span>
+  <br>
+  <span>button테그는 새로고침을 일으키고, submit을 제출시킨다 자신의onClick을 수행한다   </span>
+  <br>
+  <span>input type button은 새로고침을 일으키지않고 submit을 제출시키지 않고 자신의 onClick을 수행한다 </span>
+  <br>
+  <span>preventDefault를 달았을 경우 </span>
+  <br>
+  <span> 더이상 onClick을 등록한 button은 새로고침도 하지 않고 submit도 제출시키지 않는다 전부 정상작동한다 </span>
+  <br>
+  <span>  onClick을 등록하지않는 나머지 한 버튼은  submit을 제출시킨다  </span>
+  <br>
+  <span> 모두 정상 범주에 있다고 판단하겠다  </span>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <span>결론: 다른건 다 문제 없는데 form 안에있는 button테그는 onSubmit을 작동시켜서 onClick함수를 등록해도 onSubmit을 제출해버리는 상황이 나올수 있다    </span>
+  <br>
+  <span>그것도 preventDefault하면 사라지기때문에 걱정할 필요는 없다 </span>
+  <br>
+  <span></span>
+  <br>
+  <span></span>
+  <br>
+  <span></span>
+  <br>
+  <span></span>
+  <br>
+
+</body>
+</html>

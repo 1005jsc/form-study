@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formPractice</title>
+  <script></script>
+</head>
+<body>
+  
+  <span>폼의 가장 기본적인 골격 </span>
+
+  <form action="">
+    <div>
+      <input type="text" name="name">
+      <input type="submit">
+    </div>
+  </form>
+
+  <span>제풀버튼을 누르면 url에 name='입력값' 이렇게 붙는다 </span>
+  <br>
+  <br>
+  <span>이게 가장 기본적인 골격이다</span>
+  <br>
+  <span>제일 처음으로 form 이라는 테그를 먼저 만들고 </span>
+  <br>
+  <span>그 안에 input을 넣으면 그 input들은 form의 input들이 된다  </span>
+  <br>
+  <span>input은 태그가 짝으로 존재하는게 아니라 하나만 존재한다 input/> </span>
+  <br>
+  <br>
+  <br>
+  <span>input들의 속성들에 대해 알아보자   </span>
+  <br>
+  <br>
+  <br>
+  <span>1. type: 어떤 형태의 input인가 input의 type은 굉장히 다양하다 mdn에 쳐보면 나온다 text, textarea  </span>
+  <br>
+  <span>참고로 select option textarea 는 input의 type에 없고 하나의 독립적인 테그이다   </span>
+  <br>
+  <span>2. name : 이 input이 다룰 변수 이름   </span>
+  <br>
+  <span> 3. submit: 이 모든 정보들을 어딘가에 제출할 때 쓰는 버튼  </span>
+  <br>
+  <span> 4. 마지막으로 value: 해당 input에 초기값을 지정한다   </span>
+  <br>
+  <br>
+  <br>
+  <span> 그외 간간히 쓰이는 속성들    </span>
+  <br>
+  <br>
+  <br>
+  <span> 5. placeholder   </span>
+  <br>
+  <span> 6. id   </span>
+  <br>
+  <span> 7. defaultValue : value는 변하지 안을 값일때, defaultValue는 이 값이 나중에 변해야할 필요가 있을때   </span>
+      
+  <br>
+  <span> 7. label 테그  </span>
+  <br>
+  <span> label 테그의 for에는 다룰 데이터의 종류를 적어놓는다 input의 name이라고 생각하면 된다  </span>
+  <br>
+  <span> input의 name이라고 생각하면 된다  </span>
+  <br>
+  <br>
+  <span> 8. value와 defaultValue </span>
+  <br>
+  <span> value속성은 값이 변하지 않지만 defaultValue는 처음에 렌더될때만 값이 들어가고 나중에 값을 수정할 수 있다   </span>
+  <br>
+  <span> defaultValue는 많이 쓰임 </span>
+
+
+
+
+  <span>일단 이정도는 알고있으면 시작하는데 문제 없을 것이다 </span>
+  
+
+
+
+  <span>이 상태에서 살을 붙이고 싶으면 붙이고 하면 된다 </span>
+  <span>그리고 react에서 사용할때 값을 가져오거나 이벤트를 등록하고싶다면... </span>
+   <br/>
+   <br/>
+   <span>1. form테그 자체에 바로 onSubmit을 등록하기 </span>  
+   <span>2. 값을 받고싶은 곳에 useRef를 심어놓기  </span>
+   <br/>
+   <br/>
+  <span>위 두가지를 실행하면 아래와 같이 된다 </span> 
+
+  <br>
+
+  그럼 form에 onSubmit 을 등록해놓고 버튼을 여러개 만들어 놓으면 어떻게 됨? 
+  
+  <br/>
+ 
+  <span>const inputRef = useRef(initialValue);</span>
+  <br>
+    form action="" onSubmit={handleSubmit}>
+    <br>
+    div>
+    <br>
+        input ref={inputRef} type="text" name="name">
+        <br>
+        input type="submit">
+      <br>
+        /div>
+    <br>
+        /form>
+
+  
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+  <form action="">
+    <div>
+      <input type="text" name="name">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  
+  <form action="">
+    <div>
+      <label for="name">이름</label>
+      <input type="text" name="name">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  
+  <form action="">
+    <div>
+      <label for="hobby">취미</label>
+      <select name="hobby" id="">
+        <option value="fishing">낚시</option>
+        <option value="guitar">기타</option>
+      </select>
+      <button type="submit" value="벨류">Submit</button>
+    </div>  
+  </form>
+  
+  <form action="">
+    <label for="">
+      value 속성(attributes) 테스트
+      <input type="text"value='this is value'>
+    </label>
+
+  </form>
+
+  <div class="preference">
+    <label for="cheese">Do you like cheese?</label>
+    <input type="checkbox" name="cheese" id="cheese">
+</div>
+
+  value는 input안에 들어가는 값을 말한다 
+
+</body>
+</html>
